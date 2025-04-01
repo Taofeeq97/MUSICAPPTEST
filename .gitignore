@@ -1,0 +1,30 @@
+# Virtual environments
+venv/
+.venv/
+
+# Environment files
+.env
+.env.*
+
+# Migration files (ignore all files in migrations folders except __init__.py)
+*/migrations/*
+!*/migrations/__init__.py
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+*profile_pictures
+*media
