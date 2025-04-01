@@ -21,12 +21,12 @@ class BookingStatus(TextChoices):
     COMPLETED='COMPLETED'
 
 
-
 class PaymentStatus(TextChoices):
     PENDING='PENDING'
     COMPLETED='COMPLETED'
     FAILED='FAILED'
     REFUNDED='REFUNDED'
+
 
 class MEDIATYPE(TextChoices):
     IMAGE='IMAGE'

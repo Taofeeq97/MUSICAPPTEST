@@ -135,6 +135,7 @@ class EventListView(generics.ListCreateAPIView):
             errors=serializer.errors,
             status_code=status.HTTP_400_BAD_REQUEST
         )
+    
 
 class EventDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.active_objects.all()
@@ -180,8 +181,6 @@ class BookingListView(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticated]
     pagination_class = CustomPagination
-    
-    # Filter, search, and ordering configuration
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = {
         'event': ['exact'],

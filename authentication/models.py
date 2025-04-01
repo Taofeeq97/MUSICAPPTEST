@@ -13,7 +13,6 @@ class User(BaseModel, AbstractUser):
     id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)
     email = models.EmailField(verbose_name="email address", unique=True)
     middle_name = models.CharField(max_length=200, null=True, blank=True)
-    user_type = models.CharField(max_length=20, choices=UserType.choices, default=UserType.CLIENT)
     phone_number = models.CharField(max_length=15, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True, validators=[ProfilePictureValidator.validate_all])
 

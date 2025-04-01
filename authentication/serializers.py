@@ -16,7 +16,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['email', 'username', 'password', 'password2', 'first_name', 'last_name', 
-                 'middle_name', 'user_type', 'phone_number', 'profile_picture']
+                 'middle_name', 'phone_number', 'profile_picture']
         extra_kwargs = {
             'first_name': {'required': True},
             'last_name': {'required': True},
@@ -59,7 +59,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
             middle_name=validated_data.get('middle_name', ''),
-            user_type=validated_data.get('user_type', UserType.CLIENT),
             phone_number=validated_data.get('phone_number', ''),
             profile_picture=validated_data.get('profile_picture',None)
         )
@@ -93,7 +92,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'email', 'username', 'first_name', 'last_name', 
-                 'middle_name', 'user_type', 'phone_number', 'profile_picture']
+                 'middle_name', 'phone_number', 'profile_picture']
         read_only_fields = ['id', 'email']
     
     def validate_phone_number(self, value):

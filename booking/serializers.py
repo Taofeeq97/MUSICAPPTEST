@@ -29,6 +29,7 @@ class VenueSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Capacity must be positive.")
         return value
 
+
 class EventSerializer(serializers.ModelSerializer):
     venue_details = serializers.SerializerMethodField()
     
@@ -72,6 +73,7 @@ class EventSerializer(serializers.ModelSerializer):
             )
         
         return data
+
 
 class BookingSerializer(serializers.ModelSerializer):
     event_details = serializers.SerializerMethodField()
@@ -169,7 +171,6 @@ class BookingSerializer(serializers.ModelSerializer):
         
         return super().create(validated_data)
     
-
 
 class PaymentSerializer(serializers.ModelSerializer):
     booking_details = serializers.SerializerMethodField()

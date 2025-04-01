@@ -1,6 +1,5 @@
 import uuid
 from django.db import models
-
 from authentication.models import User
 from base.constants import BookingStatus, EventStatus, PaymentStatus
 from base.models import BaseModel

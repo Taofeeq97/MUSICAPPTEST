@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from base.managers import ActiveManager, DeletedManager
+from base.managers import ActiveManager
 
 
 class BaseModel(models.Model):

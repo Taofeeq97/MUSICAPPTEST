@@ -1,6 +1,6 @@
 from django.contrib.auth import logout
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import ensure_csrf_cookie
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import generics, permissions, status
 from rest_framework.views import APIView
@@ -150,8 +150,6 @@ class UserLogoutView(APIView):
                 status_code=status.HTTP_400_BAD_REQUEST
             )
 
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import filters
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserProfileSerializer
