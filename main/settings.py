@@ -13,6 +13,8 @@ import os
 from datetime import timedelta
 from dotenv import load_dotenv
 from pathlib import Path
+from typing import cast
+from distutils.util import strtobool
 
 load_dotenv()
 
@@ -111,7 +113,8 @@ SIMPLE_JWT = {
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-USE_POSTGRES = os.getenv("USE_POSTGRES", False)
+USE_POSTGRES = os.getenv("USE_POSTGRES")
+print(USE_POSTGRES)
 if USE_POSTGRES:
     DATABASES = {
         'default': {
