@@ -114,7 +114,7 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 USE_POSTGRES = os.getenv("USE_POSTGRES")
-print(USE_POSTGRES)
+
 if USE_POSTGRES:
     DATABASES = {
         'default': {
